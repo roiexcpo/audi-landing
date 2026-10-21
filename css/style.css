@@ -73,22 +73,79 @@ body {
 }
 /* КНОПКА */
 .header__btn--menu {
-    font-size: 22px;
-    font-family: "Inter Regular", sans-serif;
-    font-weight: 400;
-    background: white;
-    padding: 7px 26px;
-    border: 2px solid black;
-    border-radius: 900px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  font-size: 22px;
+  font-family: "Inter Regular", sans-serif;
+  font-weight: 400;
+
+  background: white;
+  padding: 7px 26px;
+  border: 2px solid black;
+  border-radius: 900px;
+  cursor: pointer;
 }
 
-.header__btn--menu:hover {
-    color: black;
-    background: rgb(219, 219, 219);
-    transform: scale(1.05);
+.burger-icon {
+  display: none;
 }
+
+.nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
+  .header--open .nav {
+    display: flex;
+  }
+
+  .menu-btn-text {
+    display: none;
+  }
+
+  .header__btn--menu {
+    border: none;
+    padding: 0;
+  }
+
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+  }
+
+  .burger-icon span {
+    background: black;
+    height: 2px;
+    width: 100%;
+  }
+
+  .nav {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+
+    background: #F4F3EF;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
 /* ГЛАНЫЙ ЭКРАН */
 .hero {
     max-width: 1266px;

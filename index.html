@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- ШАПКА САЙТА -->
-    <header class="header">
+    <header class="header" id="header">
         <!-- ЛОГОТИП СЛЕВА -->
         <div class="header__logo logo">
             <span class="header__logo--teacher-1 teacher">
@@ -17,9 +17,19 @@
             <br>РАБОТА #1
         </div>
         <!-- КНОПКА СПРАВА -->
-            <button class="header__btn--menu">
-                MENU
+            <button class="header__btn--menu" id="header__btn--menu" type="button" aria-expanded="false">
+                <span class="menu-btn-text">MENU</span>
+                <div class="burger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
+            <nav class="nav" id="navigation">
+                <a href="#" class="header__link">Models</a>
+                <a href="#" class="header__link">Electric</a>
+                <a href="#" class="header__link">Services</a>
+            </nav>
     </header>
     <!-- СЕКЦИЯ 1 (Серая машина, текст и два черчтежа) -->
     <section class="hero">
@@ -153,5 +163,6 @@
         </div>
         </div>
       </section>
+      <script src="js/script.js"></script>
 </body>
 </html>
