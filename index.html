@@ -19,17 +19,17 @@
         <!-- КНОПКА СПРАВА -->
             <button class="header__btn--menu" id="header__btn--menu" type="button" aria-expanded="false">
                 <span class="menu-btn-text">MENU</span>
-                <div class="burger-icon">
+                <button class="burger-btn" id="burgerBtn">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
-            </button>
-            <nav class="nav" id="navigation">
-                <a href="#" class="header__link">Models</a>
-                <a href="#" class="header__link">Electric</a>
-                <a href="#" class="header__link">Services</a>
-            </nav>
+                </button>
+
+                <nav class="nav" id="nav">
+                    <a href="#">Models</a>
+                    <a href="#">Electric</a>
+                    <a href="#">Services</a>
+                </nav>
     </header>
     <!-- СЕКЦИЯ 1 (Серая машина, текст и два черчтежа) -->
     <section class="hero">
@@ -69,6 +69,27 @@
             <div class="btn-read-more-1">
                 <button class="btn-read-more btn">READ MORE</button>
             </div>
+            <div class="popup" id="myPopup">
+                <div class="popup__content">
+                    <button class="close-btn">&#10006</button>
+                        <p class="title__popup-1">Explore the Audi Electric Range</p>
+                        <p class="subtitle__popup-1">Experience the future of driving with our fully electric e-tron models. Designed for performance, range, and ultimate luxury.</p>
+                        
+                        <ul>
+                            <li><strong>Audi Q4 e-tron:</strong> The compact SUV for everyday electric driving.</li>
+                            <li><strong>Audi Q8 e-tron:</strong> The flagship electric SUV with maximum range.</li>
+                            <li><strong>Audi e-tron GT:</strong> The electric sports car with breathtaking acceleration.</li>
+                        </ul>
+
+                        <p class="subsubtitle__popup-1">Ready to find your perfect match? Book a Live consultation or configure your dream car today.</p>
+
+                        <!-- Кнопки действий внутри попапа -->
+                        <div class="popup-actions">
+                            <button class="btn-primary" type="button">Book a Consultation</button>
+                            <button class="btn-secondary" type="button">Configure Your Audi</button>
+                        </div>
+                </div>
+            </div>
         </div>
         
         <!-- ФОТО КРАСНОЙ МАШИНЫ -->
@@ -89,7 +110,37 @@
             </div>
             <div class="energy__connect">
             <div class="energy__block__btn btn-read-more-2">
-                <button class="energy__block__btn btn-read-more btn">READ MORE</button>
+                <button class="energy__block__btn btn-read-more btn" id="btn-read-more-2">READ MORE</button>
+                <div class="popup-2" id="myPopup">
+                    <div class="popup__content-2">
+                        <button class="close-btn-2">&#10006</button>
+                        <p class="title__popup-2">Unleash the Power: Audi RS e-tron GT</p>
+        
+                        <!-- Вступительный текст -->
+                        <p class="subtitle__popup-2">
+                        Step into the future of high-performance driving. The RS e-tron GT isn't just an electric car; it's a statement of engineering excellence that combines breathtaking speed with zero emissions.
+                        </p>
+
+                        <!-- Характеристики (очень удобно для спорткаров) -->
+                        <ul class="specs-list">
+                            <li><strong>Acceleration:</strong> 0-100 km/h in just 3.3 seconds.</li>
+                            <li><strong>Power:</strong> Up to 646 HP with boost mode.</li>
+                            <li><strong>Range:</strong> Up to 488 km on a single charge.</li>
+                            <li><strong>Charging:</strong> 5% to 80% in about 23 minutes with fast charging.</li>
+                        </ul>
+
+                        <p class="subsubtitle__popup-2">
+                        With its low center of gravity, adaptive air suspension, and signature quattro all-wheel drive, every curve becomes a thrill. The interior wraps you in sustainable luxury, featuring Dinamica microfiber and a driver-focused cockpit.
+                        </p>
+
+                        <!-- Кнопки действий -->
+                        <div class="popup-actions">
+                            <button class="btn-primary" type="button">Book a Test Drive</button>
+                            <button class="btn-secondary" type="button">Build & Configure</button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             <div class="energy__subtitle">
                 The Audi e-tron GT is a modern-day demonstration of progress. It <br>simultaneously radiates sportiness, high quality, and comfort. Its <br>aerodynamic design and ‘gran turismo’ concept are sure to attract <br>admiring glances. Driving it is a fascinating and thoroughly emotional<br> experience.           

@@ -84,67 +84,94 @@ body {
   cursor: pointer;
 }
 
-.burger-icon {
-  display: none;
-}
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% ширины экрана */
+  height: 100vh;/* 100% высоты экрана */
+  background:#F4F3EF;
+  z-index: 999;/* Чтобы перекрывало весь сайт */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ (вместо резкого display: none) */
+  opacity: 0;
+  pointer-events: none; /* Запрещаем клики по невидимым ссылкам */
+  transition: opacity 0.4s ease;
+}
+
+.nav a {
+  font-size: 32px;
+  font-weight: 900;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* КОГДА ДОБАВЛЕН КЛАСС .active — МЕНЮ ПРОЯВЛЯЕТСЯ */
+.nav.active {
+    opacity: 1;
+    pointer-events: all; /* Включаем клики обратно */
+}
+
+.burger-btn {
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+
+  width: 28px;
+  gap: 6px;
+  background: transparent;
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.burger-btn span {
   display: none;
+  height: 2px;
+  width: 100%;
+  
+  background: black;
+  border-radius: 2px;
+  /* transition ОБЯЗАТЕЛЕН, чтобы палочки крутились плавно! */
+  transition: all 0.3s ease; 
+}
+
+/* ========================================================
+   ТРАНСФОРМАЦИЯ В КРЕСТИК (когда у кнопки появляется класс .active)
+   ======================================================== */
+
+/* Верхняя линия: опускается в центр и поворачивается на 45 градусов */
+.burger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+/* Средняя линия: просто исчезает (прозрачность 0) */
+.burger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Нижняя линия: поднимается в центр и поворачивается на -45 градусов */
+.burger-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
-  .header {
-    position: relative;
-  }
-
-  .header--open .nav {
-    display: flex;
-  }
-
-  .menu-btn-text {
+  .header__btn--menu{
     display: none;
   }
-
-  .header__btn--menu {
-    border: none;
-    padding: 0;
-  }
-
-  .burger-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 30px;
-  }
-
-  .burger-icon span {
-    background: black;
-    height: 2px;
-    width: 100%;
-  }
-
-  .nav {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-
-    background: #F4F3EF;
-    border-radius: 20px;
-    padding: 20px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-    flex-direction: column;
-    gap: 15px;
-    z-index: 100;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: 600;
-  }
+  .burger-btn span {
+  display: block;
 }
+}
+
 
 /* ГЛАНЫЙ ЭКРАН */
 .hero {
@@ -277,6 +304,68 @@ body {
     padding: 0 0 55px 50px;
 }
 
+.popup {
+  position: fixed;
+  padding: 20px;
+  inset: 0;  
+  display: none;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.popup.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup__content {
+  position: relative;
+  background:#F4F3EF;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.close-btn {
+ position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.title__popup-1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle__popup-1 {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.subsubtitle__popup-1 {
+  padding-top: 10px;
+}
+
+.popup-actions {
+  display: flex;
+  padding-top: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #F4F3EF;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .electric-cars__image-1 {
     padding: 55px 0 0 0;
     grid-column: 2;
@@ -292,6 +381,68 @@ body {
     max-width: 1266px;
     margin: 0 auto;
     width: 100%;
+}
+
+.popup-2 {
+  position: fixed;
+  padding: 20px;
+  inset: 0;  
+  display: none;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.popup-2.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup__content-2 {
+  position: relative;
+  background:#F4F3EF;
+  padding: 55px;
+  border-radius: 30px;
+}
+
+.close-btn-2 {
+ position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.title__popup-2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle__popup-2 {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.subsubtitle__popup-2 {
+  padding-top: 10px;
+}
+
+.popup-actions {
+  display: flex;
+  padding-top: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #F4F3EF;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .energy__block {
@@ -742,6 +893,7 @@ body {
   padding: 40px 30px; /* Добавили классные внутренние отступы со всех сторон */
   display: flex;
   flex-direction: column;
+  margin: 0;
   gap: 40px;          /* Большое расстояние между блоком ссылок и копирайтом внизу */
 }
 
