@@ -51,6 +51,7 @@ body {
 /* ШАПКА */
 /* ЛОГО */
 .header {
+  position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +84,6 @@ body {
   border-radius: 900px;
   cursor: pointer;
 }
-
 
 .nav {
   position: fixed;
@@ -120,7 +120,8 @@ body {
 }
 
 .burger-btn {
-  top: 25px;
+  position: absolute;
+  top: 30px;
   right: 25px;
   z-index: 1000;
 
@@ -312,12 +313,19 @@ body {
   width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+
+  opacity: 0;            /* Полностью прозрачный */
+  visibility: hidden;    /* Скрыт для кликов */
+  transition: all 0.4s ease; /* Длительность появления */
+
+  display: flex;         /* Всегда flex, чтобы центровать контент внутри */
+  align-items: center;
+  justify-content: center;
 }
 
 .popup.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 1;            /* Становится видимым */
+  visibility: visible;   /* Начинает принимать клики */
 }
 
 .popup__content {
@@ -325,6 +333,13 @@ body {
   background:#F4F3EF;
   padding: 40px;
   border-radius: 30px;
+
+  transform: translateY(80px); 
+  transition: transform 0.4s ease;
+}
+
+.popup.active .popup__content {
+  transform: translateY(0);
 }
 
 .close-btn {
@@ -391,12 +406,19 @@ body {
   width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+
+  opacity: 0;            /* Полностью прозрачный */
+  visibility: hidden;    /* Скрыт для кликов */
+  transition: all 0.4s ease; /* Длительность появления */
+
+  display: flex;         /* Всегда flex, чтобы центровать контент внутри */
+  align-items: center;
+  justify-content: center;
 }
 
 .popup-2.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 1;            /* Становится видимым */
+  visibility: visible;   /* Начинает принимать клики */
 }
 
 .popup__content-2 {
@@ -404,6 +426,13 @@ body {
   background:#F4F3EF;
   padding: 55px;
   border-radius: 30px;
+
+  transform: translateY(30px); 
+  transition: transform 0.4s ease;
+}
+
+.popup-2.active .popup__content-2 {
+  transform: translateY(0);
 }
 
 .close-btn-2 {

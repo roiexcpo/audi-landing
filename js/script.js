@@ -43,3 +43,18 @@ popUp2.addEventListener('click', function(event) {
         popUp2.classList.remove('active');
     }
 });
+
+AOS.init({ duration: 800, once: true });
+
+// Находим все ссылки внутри меню
+const navLinks = document.querySelectorAll("#nav a");
+
+// Вешаем клик на каждую ссылку
+navLinks.forEach(link => {
+    link.addEventListener("click", function() {
+        // Убираем класс active у меню и бургера, чтобы меню закрылось
+        burgerBtn.classList.remove("active");
+        openNav.classList.remove("active");
+    });
+});
+

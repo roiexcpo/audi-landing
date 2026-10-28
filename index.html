@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">    
     <title>PROJECT ONE</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- ШАПКА САЙТА -->
-    <header class="header" id="header">
+    <header class="header" id="header" data-aos="zoom-in" data-aos-duration="600">
         <!-- ЛОГОТИП СЛЕВА -->
         <div class="header__logo logo">
             <span class="header__logo--teacher-1 teacher">
@@ -19,22 +20,23 @@
         <!-- КНОПКА СПРАВА -->
             <button class="header__btn--menu" id="header__btn--menu" type="button" aria-expanded="false">
                 <span class="menu-btn-text">MENU</span>
-                <button class="burger-btn" id="burgerBtn">
+            </button>
+    </header>
+    <button class="burger-btn" id="burgerBtn">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <nav class="nav" id="nav">
-                    <a href="#">Models</a>
-                    <a href="#">Electric</a>
-                    <a href="#">Services</a>
+                    <a href="#hero">Models</a>
+                    <a href="#electric-cars">Electric</a>
+                    <a href="#energy">Services</a>
                 </nav>
-    </header>
     <!-- СЕКЦИЯ 1 (Серая машина, текст и два черчтежа) -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <!-- 1 БЛОК -->
-        <div class="hero__block-match">
+        <div class="hero__block-match" data-aos="fade-right" data-aos-duration="1000">
             <div class="hero__title">
                 At Audi youWILL find the right vehicle for every requirement
             </div>
@@ -43,21 +45,21 @@
             </div>
         </div>
         <!-- 2 БЛОК -->
-        <div class="hero__image">
+        <div class="hero__image" data-aos="fade-left" data-aos-duration="1000">
             <img class="hero__image__black" src="images/Rectangle 17.jpg" alt="Черная ауди">
         </div>
         <!-- 3 и 4 БЛОК -->
-         <div class="hero__block-model hero__block-model--first">
+         <div class="hero__block-model hero__block-model--first" data-aos="fade-left" data-aos-duration="1000">
              <img class="hero__image-1" src="images/image 328.png" alt="Чертчеж-1">
          </div>
-         <div class="hero__block-model hero__block-model--second">
+         <div class="hero__block-model hero__block-model--second" data-aos="fade-left" data-aos-duration="1000">
              <img class="hero__image-2" src="images/image 329.png" alt="Чертчеж-2">
          </div>
     </section>
     <!-- СЕКЦИЯ 2 (Тект, красная машина и желтая) -->
-     <section class="electric-cars">
+     <section class="electric-cars" id="electric-cars">
         <!-- БЛОК С ЭЛЕКТРО-МАШИНАМИ -->
-        <div class="electric-cars__block">
+        <div class="electric-cars__block" data-aos="fade-up" data-aos-delay="0">
             <div class="block__connect-cars">
                 <div class="electric-cars__title">
                     Discover our<br> current <br>electric models
@@ -93,18 +95,18 @@
         </div>
         
         <!-- ФОТО КРАСНОЙ МАШИНЫ -->
-         <div class="electric-cars__image-1">
+         <div class="electric-cars__image-1" data-aos="fade-up" data-aos-delay="200">
             <img class="electric-cars1__red-cars" src="images/Rectangle 18.jpg" alt="Красная ауди">
          </div>
          <!-- ФОТО ЖЕЛТОЙ МАШИНЫ -->
-          <div class="electric-cars__image-2">
+          <div class="electric-cars__image-2" data-aos="fade-up" data-aos-delay="400">
             <img class="electric-cars__yellow-cars" src="images/Rectangle 19.jpg" alt="Красная ауди">
          </div>
      </section>
      <!-- СЕКЦИЯ 3 (ТЕКСТ И СИНИЯ АУДИ) -->
-      <section class="energy">
+      <section class="energy" id="energy">
         <!-- БЛОК С ТЕКСТОМ И КНОПКОЙ -->
-        <div class="energy__block">
+        <div class="energy__block" data-aos="fade-right" data-aos-duration="1000">
             <div class="energy__title">
                 The Audi RS e-tron GT: pure<br> energy and progressive<br> performance
             </div>
@@ -147,11 +149,11 @@
             </div>
             </div>
         </div>
-        <div class="energy__image">
+        <div class="energy__image" data-aos="fade-left" data-aos-duration="1000">
             <img class="energy__image--blue-cars" src="images/Rectangle 22.jpg" alt="Синия ауди">
         </div>
       </section>
-      <section class="footer">
+      <section class="footer" data-aos="fade-right" data-aos-duration="1000">
         <div class="footer-block">
         <div class="footer-block__connect-1">
             <div class="footer-block__connect-1__1">
@@ -214,6 +216,7 @@
         </div>
         </div>
       </section>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script src="js/script.js"></script>
 </body>
 </html>
